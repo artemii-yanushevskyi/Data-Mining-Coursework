@@ -122,6 +122,7 @@ Sampling
  
 
 Dimensionality reduction
+
 * Less resources needed
 * Easy visualize
 * Eliminate irrelevant features and reduce noise
@@ -144,69 +145,72 @@ Replace each original attribute by a scaled version of the attribute
 
 Scale all data in the range [0,1] or [-1,1]
 
-$$ x’ = x - x_min / x_max - x_min $$
+- <img src="https://latex.codecogs.com/gif.latex?x’ = x - x_min / x_max - x_min  " />
 
-$$ x’ = -1 + 2 x - x_min / x_max - x_min $$ 
+- <img src="https://latex.codecogs.com/gif.latex?x’ = -1 + 2 x - x_min / x_max - x_min  " /> 
 
 ## Normalisation
 Zero mean and unit variance
 
-$$ x’ = x - mean(x)/s $$ 
+- <img src="https://latex.codecogs.com/gif.latex?x’ = x - mean(x)/s  " /> 
 
-$$ s = 1/(N-1) sum (x - mean)^2 $$
+- <img src="https://latex.codecogs.com/gif.latex?s = 1/(N-1) sum (x - mean)^2  " />
 
 ## Similarity and Dissimilarity
-* Euclidian distance
-* Norm
+### Euclidian distance
+### Norm
 
 Binary vectors
 x and y have binary attributes
 M_ab = Number of attributes where x has value a\in {0,1} and y has value b\in {0,1}
 
-* Simple Matching Coefficient
+### Simple Matching Coefficient
 
-$$ SMC = M00 + M11 / M00 + M01 + M10 + M11 $$
+- <img src="https://latex.codecogs.com/gif.latex?SMC = M00 + M11 / M00 + M01 + M10 + M11  " />
 
-* Jacard Similarity Coefficient
+### Jacard Similarity Coefficient
 
-$$ J = M11 / M01 + M10 + M11 $$ 
+- <img src="https://latex.codecogs.com/gif.latex?J = M11 / M01 + M10 + M11  " /> 
 
-* Cosine similarity
+### Cosine similarity
 
-$$ sim(d1, d2) = cos(< d1, d2) = d1^T • d2/ norm(d1)norm(d2) $$
+- <img src="https://latex.codecogs.com/gif.latex?sim(d1, d2) = cos(< d1, d2) = d1^T • d2/ norm(d1)norm(d2)  " />
 
-* Covariance matrix (for features??)
+### Covariance matrix (for features??)
 
-$$ ∑ = [[s11, s12], [s21, s22]]$$ 
+- <img src="https://latex.codecogs.com/gif.latex?∑ = [[s11, s12], [s21, s22]]  " /> 
 
-$$ s_ij = cov(x_i, x_j) = (x_i -mean(x_i))^T • (x_j - mean(x_j)) / N-1 $$
+- <img src="https://latex.codecogs.com/gif.latex?s_ij = cov(x_i, x_j) = (x_i -mean(x_i))^T • (x_j - mean(x_j)) / N-1  " />
 
-* Correlation (for features??)
+### Correlation (for features??)
 
-$$ \rho _ij = s_ij/s_i*s_j $$
+- <img src="https://latex.codecogs.com/gif.latex?\rho _ij = s_ij/s_i*s_j  " />
 
 correlation ≠ causation, look for 3rd variable
 
-$x_i$ and $x_j$ are features
+x_i and x_j are features
 
 Gower’s similarity index
 (For objects)
 
 
-$$ sim_G(x,y) = 1/M ∑sim(x_i,y_i) $$
+- <img src="https://latex.codecogs.com/gif.latex?sim_G(x,y) = 1/M ∑sim(x_i,y_i)  " />
 
 here x, y are objects 
 
-$$ sim(x_i, y_i) = 1 if x_i = y_i and 0 otherwise $$
+- <img src="https://latex.codecogs.com/gif.latex?sim(x_i, y_i) = 1 if x_i = y_i and 0 otherwise  " />
 
 For interval/ratio
 
-sim(x_i, y_i) = 1 - |x_i - y_i|/R_i
+- <img src="https://latex.codecogs.com/gif.latex?sim(x_i, y_i) = 1 - |x_i - y_i|/R_i  " /> 
+
 Where R_i is the range of i-th attribute in the data.
 
 ??
 
-d_G(x,y) = 1 - sim_G(x, y)
+- <img src="https://latex.codecogs.com/gif.latex?d_G(x,y) = 1 - sim_G(x, y)  " />
+
+- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> 
 
 
 
