@@ -84,17 +84,17 @@ Outlier/Anomaly detection
 An ordinal or continuous attribute x
 A number p between 0 and 100
 
-> The p-th percentile is a value $x_p$ of x such that p% of the observed values of x are smaller than $x_p$.
+> The p-th percentile is a value x_p of x such that p% of the observed values of x are smaller than x_p.
 
 
-> Mean(attribute) = sum(attribute values)/m
+> Mean(attribute) = sum(attribute values)/m 
 
 > Median(attribute) = value in the middle of observations, or average of 2 values in the middle
 (Trimmed mean)
 
 > Range(attribute) = difference between the largest and the smallest
 
-> Variance(attribute) = $s^2_x$ = sum(attribute values - mean)$^2$/(m - 1)
+Variance(attribute) = s^2_x = sum(attribute values - mean)^2/(m - 1)
 
 # Visualisation Techniques
 
@@ -145,18 +145,18 @@ Replace each original attribute by a scaled version of the attribute
 
 Scale all data in the range [0,1] or [-1,1]
 
-<img src="https://latex.codecogs.com/gif.latex?x’ = \frac{x - x_{min}}{ x_{max} - x_{min} } " />
+$$ x'= \frac{x - x_{min}}{ x_{max} - x_{min} } $$
 
-<img src="https://latex.codecogs.com/gif.latex?x’ = -1 + 2\ \frac{x - x_{min}}{x_{max} - x_{min} } " /> 
+$$ x'= -1 + 2\ \frac{x - x_{min}}{x_{max} - x_{min} } $$ 
 
 ## Normalisation
 Zero mean and unit variance
 
-<img src="https://latex.codecogs.com/gif.latex? x' = \frac{x - mean(x)}s  " /> ,
+$$ x' = \frac{x - mean(x)}s  $$ ,
 
 where
 
-<img src="https://latex.codecogs.com/gif.latex?s = \frac1{(N-1)}\sum(x - mean(x))^2  " />
+$$s = \frac1{(N-1)}\sum(x - mean(x))^2  $$
 
 ## Similarity and Dissimilarity
 ### Euclidian distance
@@ -168,25 +168,25 @@ M_ab = Number of attributes where x has value a\in {0,1} and y has value b\in {0
 
 ### Simple Matching Coefficient
 
-<img src="https://latex.codecogs.com/gif.latex?SMC = (M00 + M11 )/( M00 + M01 + M10 + M11 ) " />
+$$SMC = (M00 + M11 )/( M00 + M01 + M10 + M11 ) $$
 
 ### Jacard Similarity Coefficient
 
-<img src="https://latex.codecogs.com/gif.latex?J = M11 / (M01 + M10 + M11) " /> 
+$$J = M11 / (M01 + M10 + M11) $$ 
 
 ### Cosine similarity
 
-<img src="https://latex.codecogs.com/gif.latex? sim (d_1 ,d_2) = \cos(d_1, d_2) = \frac{d1^T • d2}{norm(d_1)norm(d_2)}" />
+$$ sim (d_1 ,d_2) = \cos(d_1, d_2) = \frac{d1^T • d2}{norm(d_1)norm(d_2)}$$
 
 ### Covariance matrix (for features??)
 
-<img src="https://latex.codecogs.com/gif.latex?\sum = [[s_{11}, s_{12}], [s_{21}, s_{22}]]  " /> 
+$$\sum = [[s_{11}, s_{12}], [s_{21}, s_{22}]]  $$ 
 
-<img src="https://latex.codecogs.com/gif.latex? s_{ij} = cov(x_i, x_j) = \frac{(x_i - mean(x_i))^T \cdot (x_j - mean(x_j))}{N-1} " />
+$$ s_{ij} = cov(x_i, x_j) = \frac{(x_i - mean(x_i))^T \cdot (x_j - mean(x_j))}{N-1} $$
 
 ### Correlation (for features??)
 
-<img src="https://latex.codecogs.com/gif.latex?\rho _{ij} = \frac{s_{ij}}{s_{i}*s_{j}}  " />
+$$\rho _{ij} = \frac{s_{ij}}{s_{i}*s_{j}}  $$
 
 correlation ≠ causation, look for 3rd variable
 
@@ -196,28 +196,28 @@ Gower’s similarity index
 (For objects)
 
 
-<img src="https://latex.codecogs.com/gif.latex? sim_G(x,y) = \frac{1}{M} \sum sim(x_i,y_i)  " />
+$$ sim_G(x,y) = \frac{1}{M} \sum sim(x_i,y_i)  $$
 
 here x, y are objects 
 
-<img src="https://latex.codecogs.com/gif.latex? sim(x_i, y_i) = 1\text{ if }x_i = y_i\text{ and }0\text{ otherwise } " />
+$$ sim(x_i, y_i) = 1\text{ if }x_i = y_i\text{ and }0\text{ otherwise } $$
 
 For interval/ratio
 
-<img src="https://latex.codecogs.com/gif.latex? sim(x_i, y_i) = 1 - \frac{|x_i - y_i|}{R_i}  " /> 
+$$ sim(x_i, y_i) = 1 - \frac{|x_i - y_i|}{R_i}  $$ 
 
 Where R_i is the range of i-th attribute in the data.
 
 ??
 
-<img src="https://latex.codecogs.com/gif.latex?d_G(x,y) = 1 - sim_G(x, y) " />
+$$d_G(x,y) = 1 - sim_G(x, y) $$
 
 # ...
 In linear regression: betas are how influential are attributes
 
-<img src="https://latex.codecogs.com/gif.latex?r^2\text{ -- how well model captures variation}=\frac{\text{variation accounted}}{\text{total variation}} = 1 - \frac{SS_E}{SS_T} " />
+$$r^2\text{ -- how well model captures variation}=\frac{\text{variation accounted}}{\text{total variation}} = 1 - \frac{SS_E}{SS_T} $$
 
-<img src="https://latex.codecogs.com/gif.latex?SS_T = \text{total spread }\sum(y_i - mean(y)) " />
+$$SS_T = \text{total spread }\sum(y_i - mean(y)) $$
 
 Higher r^2 the better (we can trick it by not including irrelevant variables, that is why we need r_adj^2
 
