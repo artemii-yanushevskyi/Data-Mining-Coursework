@@ -114,8 +114,10 @@ We don't need to preserve the `day` attribute, since it has become redundant.
 
 This attribute is the most confusing. From the histogram we can infer that it is quite unlikely that for 10 present the balance attribute is between -8 and 8 pounds. It is either because their actual balance is different since they may use other means to save money. As a result the balance is not a good predictor for target attribute.
 
+### Replacing
 I will try to make balance to be more stronger estimation of the wealth by replacing the value between -8 and 8 by its estimation from more stronger predictors, such as: `education`, `marital`, `default`, `housing`, `loan`, `contact`, and `poutcome`.
 
+### Logarithm
 The second reason why this will be beneficial is because the distribution is lognormal, like all human generated data usually is. I will apply function $\log$ to the attribute values to oblatin a distribution close to Gaussian.
 
 Now we can freely apply logarithm to the attribute balance.
@@ -124,7 +126,32 @@ Now we can freely apply logarithm to the attribute balance.
 
 // transformed balance
 
+## Duration, Campaign, and Previous
 
+I will go with the same approach as with `balance`, `campaign`, and `previous`. Apply the function $\log$ to the values
+
+// log graph for duration
+
+Campaign doesn't become
+
+// log graph for campaign
+
+// log graph for previous
+
+
+## Pdays
+
+It is not quite clear what strategy to use with pdays attribute.
+
+// graph
+
+
+## Poutcome
+
+We may consider grouping the poutcome attribute values.. 
+
+
+## PCA for numerical attributes
 
 
 
