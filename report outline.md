@@ -153,22 +153,105 @@ We may consider grouping the poutcome attribute values..
 
 ## PCA for numerical attributes
 
+The application of PCA for our numerical data had output the folowing result
+
+// PCA
+
+This is strengthtening the conclusion from Pearson correlation matrix that the .. attribute is the most predictive of the 'yes' class.
+
+When applying classification we will use first .. PCA components that explain .. of the data.
+
+## Scaling ...
+
+## Result of Feature Engineering
+
+Now, instead of .. attributes we have .. that should improve the predictive power of the classification algorithms.
+
+# Classification
+
+## Desision trees
+
+The score had increased to ..
 
 
-We would want to cut the tails of the following attributes
+## Naive Bayes
 
-* Age, cut right tail at 82 or even 60
-* Restrict balance to values from -50 to 2k
-* Duration, from 0 to 2k
-* Campaign, form 0 to 20
-* _It is not quite clear how to deal with Pdays and Previous attributes_
+We apply .. to categorical and Gaussian Naive Bayes to numerical attributes. Then we use the /voting classifier/ for ...
 
-Alternatively we may try to group the values.
+The achieved accuracy is ..
 
-The best model was a voting committee of four models, which achieved 89.1% (under ten-fold cross-validation).
 
-We also assessed these models (with the same meta-parameter settings) under an unequal cost regime (misclassified bad risks cost five times as much as misclassified good risks). We found that a naive Bayes model trained on the complete dataset performed best, at a cost of 495.
+## Logistic Regression
 
-Both models were then applied to an unseen test dataset containing 50 examples. The default rule has an accuracy of 68% and a cost of 34. These models achieved an accuracy of 76% and 31 respectively. The drawbacks of such a small test set are discussed.
+The achieved accuracy is ..
 
-Now month is not a categorical variable.
+## KNN
+
+The ...
+
+## Random Forest
+
+# Cost-sensitive classification
+
+I use thresholding approach to achieve cost sensitivity
+
+## Desision trees
+
+The cost is ..
+
+
+## Naive Bayes
+
+We apply .. to categorical and Gaussian Naive Bayes to numerical attributes. Then we use the /voting classifier/ for ...
+
+The cost is ..
+
+
+## Logistic Regression
+
+The cost is ..
+
+## KNN
+
+The ...
+
+## Random Fores
+
+The cost is ..
+
+
+
+# Improving Accuracy: Ensembles 
+
+
+# Reducing Cost: Ensembles 
+
+
+
+# Comparing the models
+
+The best model for accuracy is ..
+
+The lowest cost model is ..
+
+# Conclusions
+
+## Dataset
+
+There are few suggestions about the given data.
+
+
+## Model evaluation
+
+The model generalises well for new data ..
+
+* some attributes are transformed in order to have the distribution close to Gaussian. It is actually requirement for some classifier algorithms like Naive Bayes
+* the models work quick enough to generate predictions in production/real time on the server
+* there is a potential for such models to scale without the need to retrain on the entire dataset
+...
+
+The model is not perfect, it may be improved in the following ways
+
+* it depends on the number and time of samples, there is a noticable improvement in the addvertisement team as time goes by
+* it could be biased towards favoring days when team does many calls (hoping to achieve higer accuracy)
+...
