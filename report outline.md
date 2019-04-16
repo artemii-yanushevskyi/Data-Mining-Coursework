@@ -255,3 +255,5 @@ The model is not perfect, it may be improved in the following ways
 * it depends on the number and time of samples, there is a noticable improvement in the addvertisement team as time goes by
 * it could be biased towards favoring days when team does many calls (hoping to achieve higer accuracy)
 ...
+
+# Bibliography
