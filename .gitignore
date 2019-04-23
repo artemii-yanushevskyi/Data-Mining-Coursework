@@ -1,12 +1,11 @@
 
-.ipynb_checkpoints/Lab 1-checkpoint.ipynb
-.ipynb_checkpoints/R tutorials-checkpoint.ipynb
-cworkTrain.arff
+.ipynb_checkpoints/
+.idea/
+*.pyc
+
+cworkTrain.arff 
 cworkPredict.arff
 
-.ipynb_checkpoints/Data Mining Notes-checkpoint.ipynb
-.ipynb_checkpoints/Term Deposit Prediction-checkpoint.ipynb
-.ipynb_checkpoints/Tutorial Filtering Data-checkpoint.ipynb
-.ipynb_checkpoints/(draft) Group on values of a random variable-checkpoint.ipynb
-(draft) Group on values of a random variable.ipynb
 .DS_Store
+
+*.icloud
