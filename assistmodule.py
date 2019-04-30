@@ -140,6 +140,8 @@ def classification(X, y, test=False):
     scores[name] = pd.Series(scorescv)
     print('finished', name)
     
+    display(scores.describe())
+    
     return scores
 
 def cs_classification(X, y, test=False):
@@ -165,9 +167,11 @@ def cs_classification(X, y, test=False):
     
     n = 50
     cls = RandomForestClassifier(n_estimators=n, n_jobs=-1)
-    name = 'RandomF {} trees'
+    name = 'RandomF {} trees'.format(n)
     threshold = thresholding(X, y, cls, name=name)
     scores = pd.concat([scores, threshold['mincost_df']], axis=1)
+    
+    display(scores.describe())
     
     return scores
 
